@@ -1,0 +1,11 @@
+services:
+  otp_mail:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: otp_mail:1.0.0
+    ports:
+      - "25:25"
+    volumes:
+      - ./.env:/app/.env:ro
+    restart: unless-stopped
